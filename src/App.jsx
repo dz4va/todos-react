@@ -52,31 +52,31 @@ function App() {
   }
 
   return (<>
-    <h1 className='header'>Kypup Tasks <span id="version">v.0.0.1</span></h1>
-    <form onSubmit={handleFormSubmit} className='new-item-form'>
-      <div className='form-row'>
-        <input type='text' autoFocus={true} value={newItem} id='item-input' name='item' placeholder='Add new item' onChange={e => { setNewItem(e.target.value) }} />
-        <button className='item-add-button'>Add Item</button>
-      </div>
-    </form>
-    <h2 className='sub-category'>In Progress Tasks ({inProgressItemsCount})</h2>
-    <ul className='todo-list'>
-      {
-        todos.map((todo, index) => {
-          if (todo.done) return;
-          return <Todo key={todo.id} id={todo.id} text={todo.text} done={todo.done} onDelete={() => { handleOnDelete(todo.id) }} onDone={(checked) => { handleOnDone(index, checked) }} />
-        })
-      }
-    </ul>
-    <h2 className='sub-category'>Completed Tasks ({doneItemsCount})</h2>
-    <ul className='todo-list'>
-      {
-        todos.map((todo, index) => {
-          if (!todo.done) return;
-          return <Todo key={todo.id} id={todo.id} text={todo.text} done={todo.done} onDelete={() => { handleOnDelete(todo.id) }} onDone={(checked) => { handleOnDone(index, checked) }} />
-        })
-      }
-    </ul>
+      <h1 className='header'>Kypup Tasks <span id="version">v0.0.1</span></h1>
+      <form onSubmit={handleFormSubmit} className='new-item-form'>
+        <div className='form-row'>
+          <input type='text' autoFocus={true} value={newItem} id='item-input' name='item' placeholder='Add new item' onChange={e => { setNewItem(e.target.value) }} />
+          <button className='item-add-button'>Add Item</button>
+        </div>
+      </form>
+      <h2 className='sub-category'>In Progress Tasks ({inProgressItemsCount})</h2>
+      <ul className='todo-list'>
+        {
+          todos.map((todo, index) => {
+            if (todo.done) return;
+            return <Todo key={todo.id} id={todo.id} text={todo.text} done={todo.done} onDelete={() => { handleOnDelete(todo.id) }} onDone={(checked) => { handleOnDone(index, checked) }} />
+          })
+        }
+      </ul>
+      <h2 className='sub-category'>Completed Tasks ({doneItemsCount})</h2>
+      <ul className='todo-list'>
+        {
+          todos.map((todo, index) => {
+            if (!todo.done) return;
+            return <Todo key={todo.id} id={todo.id} text={todo.text} done={todo.done} onDelete={() => { handleOnDelete(todo.id) }} onDone={(checked) => { handleOnDone(index, checked) }} />
+          })
+        }
+      </ul>
   </>);
 }
 
