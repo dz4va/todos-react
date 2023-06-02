@@ -17,9 +17,9 @@ body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: rgba(0.1, 0.1, 0.1, 0.5);
+  background-color: rgba(22, 22, 22, 0.5);
   border-radius: 5px;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(10px);
 }
 
 .logo {
