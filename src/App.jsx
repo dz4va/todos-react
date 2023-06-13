@@ -28,7 +28,14 @@ function Todo({ id, text, done, onDelete, onDone }) {
 
 function App() {
   const [newItem, setNewItem] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem("TODOS");
+    if (localValue === null) {
+      return [];
+    } else {
+      return JSON.parse(localValue);
+    }
+  });
   const inProgressItemsCount = todos.filter((todo) => !todo.done).length;
   const doneItemsCount = todos.filter((todo) => todo.done).length;
 
